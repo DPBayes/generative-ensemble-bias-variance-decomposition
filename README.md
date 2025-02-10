@@ -1,6 +1,8 @@
+This repository contains code from the paper [A Bias-Variance Decomposition for Ensembles over Multiple Synthetic Datasets](https://arxiv.org/abs/2402.03985).
+
 # Installing Dependencies
 
-We use [Poetry](https://python-poetry.org/) package manager for Python to manage 
+We use the [Poetry](https://python-poetry.org/) package manager to manage Python 
 dependencies. After installing Poetry according to their instructions, run 
 ```bash
 poetry install
