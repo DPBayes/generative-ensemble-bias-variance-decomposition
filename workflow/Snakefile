@@ -1,0 +1,33 @@
+localrules: all 
+
+rule all:
+    input:
+        preliminary_nondp="results/preliminary-nondp/ready-to-plot",
+        regression_results="results/regression-datasets/ready-to-plot",
+        classification_results="results/classification-datasets/ready-to-plot",
+        dp_experiment="results/dp-experiment/ready-to-plot"
+
+module preliminary_nondp:
+    snakefile: 
+        "rules/preliminary_nondp.smk"
+    config: config
+
+module regression_datasets:
+    snakefile: 
+        "rules/regression_datasets.smk"
+    config: config
+
+module classification_datasets:
+    snakefile: 
+        "rules/classification_datasets.smk"
+    config: config
+
+module dp_experiment:
+    snakefile: 
+        "rules/dp_experiment.smk"
+    config: config
+
+use rule * from preliminary_nondp as preliminary_nondp_*
+use rule * from regression_datasets as regression_datasets_*
+use rule * from classification_datasets as classification_datasets_*
+use rule * from dp_experiment as dp_experiment_*
